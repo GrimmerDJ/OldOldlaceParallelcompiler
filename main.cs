@@ -4,18 +4,22 @@ class Program
 {
     static void Main()
     {
-        string[] Lyrics = new string[4];
+        Console.Write("How many lines of lyrics would you like to enter? ");
+        int numberOfLines = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Please enter 4 lines of lyrics:");
+        string[] lines = new string[numberOfLines];
 
-        for (int i = 0; i < 4; i++)
+        Console.WriteLine($"\nPlease enter {numberOfLines} lines of lyrics:");
+
+        for (int i = 0; i < lines.Length; i++)
         {
-            Console.Write($"Line {i + 1}: ");
-            Lyrics[i] = Console.ReadLine();
+            Console.Write($"Enter line {i + 1}: ");
+            lines[i] = Console.ReadLine();
         }
 
-        Console.WriteLine("\nYou entered:");
-        foreach (string line in Lyrics)
+        Console.WriteLine("\nYou have entered:");
+
+        foreach (string line in lines)
         {
             Console.WriteLine(line);
         }
